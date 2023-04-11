@@ -1,20 +1,20 @@
-
-
 import unittest
 
+class testcontadordepalabras(unittest.TestCase):
 
-def count_words(word):
+    def test_contador_palabras(self):
+        palabras = ["hola", "la", "casa", "la"]
+        contador = {}
+        for palabra in palabras:
+            if palabra in contador:
+                contador[palabra] += 1
 
-    return {word: 1}
+            else:
+                contador[palabra] = 1
 
-
-class TestCountLetters(unittest.TestCase):
- def test_simple(self):
-     result = count_words('hola la casa la')
-     self.assertEqual(result, {'hola': 1, 'la': 2, 'casa': 1 })
-     
+        self.assertEqual(contador["hola"], 1)
+        self.assertEqual(contador["la"], 2)
+        self.assertEqual(contador["casa"], 1)
 
 if __name__ == '__main__':
-
-    unittest.main()
-
+        unittest.main
